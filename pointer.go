@@ -7,5 +7,7 @@ func main() {
 
 	var greeting *string = &message
 
+	*greeting = "hi"
+
 	fmt.Println(message, *greeting)
 }
