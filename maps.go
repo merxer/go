@@ -13,6 +13,11 @@ func main() {
 	delete(prefixMap, "pat")
 
 	name := "pat"
+
+	if _, exists := prefixMap[name]; !exists {
+		prefixMap[name] = "Dude "
+	}
+
 	message := prefixMap[name] + " " + name
 	fmt.Println(message)
 
