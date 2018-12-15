@@ -1,44 +1,8 @@
 package main
 
-import "fmt"
-
-type Salutation struct {
-	name string
-	greeting string
-}
-
-type Printer func(string)
-
-func Greet(salutation Salutation, do Printer, isFormal bool) {
-	message , alternate := CreateMessage(salutation.name, salutation.greeting)
-	if isFormal {
-		do(message)
-	}
-	do(alternate)
-}
-
-func CreateMessage(name string, greeting string) (message string,alternate string) {
-	fmt.Println(len(greeting))
-	message = greeting + " " + name
-	alternate = "Hey! " + name
-	return message, alternate
-}
-
-func Print(s string) {
-	fmt.Print(s)
-}
-func PrintLine(s string) {
-	fmt.Println(s)
-}
-
-func CreateCustomFunction(custom string) Printer {
-	return func(s string) {
-		fmt.Println(s + custom)
-	}
-}
-
+import "./greeting"
 
 func main() {
-	var s = Salutation{"Bob", "Hello"}
-	Greet(s, CreateCustomFunction("!!!"), false)
+	var s = greeting.Salutation{"Bob", "Hello"}
+	greeting.Greet(s, greeting.CreateCustomFunction("!!!"), false)
 }
