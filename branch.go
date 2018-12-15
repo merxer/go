@@ -3,6 +3,6 @@ package main
 import "./greeting"
 
 func main() {
-	var s = greeting.Salutation{"Bob", "Hello"}
-	greeting.Greet(s, greeting.CreateCustomFunction("!!!"), false)
+	var s = greeting.Salutation{"Joe", "Hello"}
+	greeting.Greet(s, greeting.CreateCustomFunction("!!!"), true)
 }
