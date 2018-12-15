@@ -9,8 +9,8 @@ const (
 
 const (
 	A = iota
-	B = iota
-	C = iota
+	B
+	C
 )
 
 func main() {
