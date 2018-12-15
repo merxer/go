@@ -14,6 +14,7 @@ func Greet(salutation Salutation) {
 }
 
 func CreateMessage(name string, greeting ...string) (message string,alternate string) {
+	fmt.Println(len(greeting))
 	message = greeting[1] + " " + name
 	alternate = "Hey! " + name
 	return message, alternate
