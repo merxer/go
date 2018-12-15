@@ -2,24 +2,37 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func main() {
-	phrase := "These are the times that try mem's souls.\n"
-	words := strings.Split(phrase, " ")
+	msgCh := make(chan Message, 1)
+	errCh := make(chan FailedMessage, 1)
 
-	ch:= make(chan string, len(words))
-	for _, word := range words {
-		ch <- word
+	msg :=  Message {
+		To: []string{"frodo@underhill.me"},
+		From: "gandalf@whitecouncil.org",
+		Content: "Keep it secret, Keep it safe.",
 	}
 
-	close(ch)
-
-
-	for msg := range ch {
-		fmt.Print(msg + " ")
+	failedMessage := FailedMessage{
+		ErrorMessage: "Message intercepted by black rider",
+		OriginalMessage: Message{},
 	}
+	msgCh <- msg
+	errCh <- failedMessage
 
+	fmt.Println(<-msgCh)
+	fmt.Println(<-errCh)
 
+}
+
+type Message struct {
+	To []string
+	From string
+	Content string
+}
+
+type FailedMessage struct {
+	ErrorMessage string
+	OriginalMessage Message
 }
