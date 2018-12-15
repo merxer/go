@@ -5,6 +5,9 @@ import "fmt"
 const (
 	PI = 3.14
 	Language = "go"
+)
+
+const (
 	A = iota
 	B = iota
 	C = iota
