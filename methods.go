@@ -11,6 +11,10 @@ type Salutations []Salutation
 
 type Printer func(Salutation, int)
 
+func (salutation *Salutation) Rename (newName string) {
+	salutation.Name = newName
+}
+
 func (salutions Salutations)Greeting(do Printer,times int) {
 	for _, value := range salutions {
 		do(value,times)
@@ -28,6 +32,8 @@ func main() {
 		{"Pat", "Hello"},
 		{"Kung", "Hi"},
 	}
+
+	friends[0].Rename("P@t")
 
 	friends.Greeting(PrintLine, 4)
 }
