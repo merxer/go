@@ -2,15 +2,13 @@ package main
 
 import "fmt"
 
-func printLoop(message string,loop int) {
-	i := 0
-	for i< loop {
+func printLoop(message string) {
+	for {
 	        fmt.Println(message)
-		i++
 	}
 
 }
 
 func main() {
-	printLoop("Hello", 10)
+	printLoop("Infinity Loops")
 }
