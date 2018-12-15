@@ -3,8 +3,10 @@ package main
 import "fmt"
 
 func printLoop(message string,loop int) {
-	for i := 0; i< loop; i++ {
+	i := 0
+	for i< loop {
 	        fmt.Println(message)
+		i++
 	}
 
 }
