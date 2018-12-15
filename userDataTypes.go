@@ -8,8 +8,9 @@ type Salutation struct {
 }
 
 func main() {
-	var s = Salutation{greeting: "Hello!",
-		name: "Joe"}
+	var s = Salutation{}
+	s.name = "Joe"
+	s.greeting = "Hi"
 
 	fmt.Println(s.name)
 	fmt.Println(s.greeting)
