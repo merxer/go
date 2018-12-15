@@ -13,11 +13,12 @@ func main() {
 	for _, word := range words {
 		ch <- word
 	}
+
 	close(ch)
 
 
-	for i:=0; i< len(words); i++ {
-		fmt.Print(<-ch + " ")
+	for msg := range ch {
+		fmt.Print(msg + " ")
 	}
 
 
