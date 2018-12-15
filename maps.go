@@ -10,7 +10,9 @@ func main() {
 
 	prefixMap["Odin"] = "Jr. "
 
-	name := "Odin"
+	delete(prefixMap, "pat")
+
+	name := "pat"
 	message := prefixMap[name] + " " + name
 	fmt.Println(message)
 
