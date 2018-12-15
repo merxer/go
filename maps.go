@@ -8,7 +8,9 @@ func main() {
 		"kung" : "Mrs. ",
 	}
 
-	name := "kung"
+	prefixMap["Odin"] = "Jr. "
+
+	name := "Odin"
 	message := prefixMap[name] + " " + name
 	fmt.Println(message)
 
