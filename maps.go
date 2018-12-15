@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	var prefixMap map[string]string
-	prefixMap = make(map[string]string)
-	prefixMap["pat"] = "Mr "
-	prefixMap["kung"] = "Mrs "
+	prefixMap := map[string]string {
+		"pat" : "Mr. ",
+		"kung" : "Mrs. ",
+	}
 
 	name := "kung"
 	message := prefixMap[name] + " " + name
