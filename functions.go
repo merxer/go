@@ -8,8 +8,11 @@ type Salutation struct {
 }
 
 func Greet(salutation Salutation) {
-	fmt.Println(salutation.name)
-	fmt.Println(salutation.greeting)
+	fmt.Println(CreateMessage(salutation.name, salutation.greeting))
+}
+
+func CreateMessage(name, greeting string) string {
+	return greeting + " " + name
 }
 
 
