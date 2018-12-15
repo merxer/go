@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	message := "Hello Go World"
+	var message string = "Hello Go World"
 
 	var greeting *string = &message
 
