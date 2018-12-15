@@ -1,10 +1,10 @@
 package main
 
 func main() {
-	func() {
+	go func() {
 		println("Hello")
 	}()
-	func() {
+	go func() {
 		println("Go")
 	}()
 }
